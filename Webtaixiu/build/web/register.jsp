@@ -21,7 +21,7 @@
     </style>
     <body id="particles-js"></body>
     <div class="animate__animated animate__backInUp">
-        <div class="container" style="height: 850px;">
+        <div class="container" style="height: 680px; top: 25px;">
             <span class="error animate__animated animate__tada" id="msg"></span>
             <form name="form1" action="Login" method="POST" class="box" onsubmit="return checkStuff()">
                 <h4>Game<span>TaiXiu</span></h4>
@@ -29,8 +29,6 @@
                 <input type="text" name="username" placeholder="User Name" autocomplete="off">
                 <input type="text" name="fullname" placeholder="Full Name" autocomplete="off">
                 <input type="text" name="email" placeholder="Email" autocomplete="off">
-                <input type="text" name="address" placeholder="Address" autocomplete="off">
-                <input type="text" name="phone" placeholder="Phone Number" autocomplete="off">
                 <i class="typcn typcn-eye" id="eye"></i>
                 <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
                 <i class="typcn typcn-eye" id="reeye"></i>
@@ -76,8 +74,7 @@
                 function checkStuff() {
                     var username = document.form1.username;
                     var fullname = document.form1.fullname;
-                    var email = document.form1.address;
-                    var phone = document.form1.phone;
+                    var email = document.form1.email;
                     var password = document.form1.password;
                     var msg = document.getElementById('msg');
 
