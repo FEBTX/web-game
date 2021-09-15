@@ -16,9 +16,8 @@
     <body id="particles-js"></body>
     <div class="animate__animated animate__backInDown">
         <div class="container" style="width: 700px; height: 50px" >
-            <div class="">
-                
-            </div>
+            <a href="#" id="btn_logout">Logout</a>
+            <a href="#" id="btn_play">play</a>
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
@@ -28,11 +27,13 @@
                     String role = session.getAttribute("role").toString();
                     if (role.equals("1")) {
                 %>
-                <a href="ServerRoll.jsp" class="" >play</a>
+                <a href="ServerRoll.jsp" id="btn_play" >play</a>
                 <%
                 } else {
                 %>
-                <a href="ClientRoll.jsp">play</a>
+                <a href="ClientRoll.jsp" id="btn_play">Play</a>
+                <a href="#" id="btn_changeInfomation">Change Infomation</a>
+                <a href="#" id="btn_viewhistory">View History</a>
                 <%
                     }
                 %>
