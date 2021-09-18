@@ -1,26 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Server;
 
+import DAO.DAOHistoryRoom;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
+import javax.websocket.server.ServerEndpoint;
 
-/**
- *
- * @author Admin
- */
-public class RollDiceServer {
-    static Set<Session> users = Collections.synchronizedSet(new HashSet<>());
+@ServerEndpoint(value = "/Playgame")
+public class RollServer {
+	static Set<Session> users = Collections.synchronizedSet(new HashSet<>());
 	@OnOpen
 	public void handleOpen(Session session) {
 		users.add(session);
@@ -33,10 +28,18 @@ public class RollDiceServer {
 			userSession.getBasicRemote().sendText("System: you are connectd as " + message);
 		} else {
 			for (Session session : users) {
-				session.getBasicRemote().sendText(username + ": " + message);
+				session.getBasicRemote().sendText(message);
+                                String a[] = message.split("");
+                               int total = Integer.parseInt(a[0]) + Integer.parseInt(a[1]) + Integer.parseInt(a[2]);
+                               if(total < 10){
+                                  DAOHistoryRoom.InsertHistoryRoom("xiu", total);
+                               }else{
+                                  DAOHistoryRoom.InsertHistoryRoom("tai", total);
+                               }
 			}
 		}
 	}
+
 	@OnClose
 	public void handleClose(Session session) {
 		users.remove(session);
@@ -46,4 +49,5 @@ public class RollDiceServer {
 	public void handleError(Throwable t) {
 		t.printStackTrace();
 	}
+
 }
