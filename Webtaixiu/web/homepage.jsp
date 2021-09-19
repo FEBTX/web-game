@@ -26,7 +26,9 @@
                     String role = session.getAttribute("role").toString();
                     if (role.equals("1")) {
                 %>
-                <input type="submit" name="btn_homepage" value="Play">               
+                <input type="submit" name="btn_homepage" value="Play">     
+                <input type="submit" name="btn_homepage" value="View History Room">
+                 <input type="submit" name="btn_homepage" value="View History User"> 
                 <%
                 } else {
                 %>

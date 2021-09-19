@@ -36,6 +36,9 @@ public class ResultRoll {
 		} else {
 			for (Session session : users) {
 				session.getBasicRemote().sendText(username + ": " + message);
+                                 String a[] = message.split("/");
+                                 //huybui/thua/tai/1000/1500/57
+                                 DAO.DAOHistory.InsertHistory(a[0],a[1],a[2],Integer.parseInt(a[3]),Integer.parseInt(a[4]),Integer.parseInt(a[5]));
                                 System.out.println(message);
 			}
 		}

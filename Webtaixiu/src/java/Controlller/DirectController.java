@@ -50,7 +50,13 @@ public class DirectController extends HttpServlet {
                 response.sendRedirect("./ClientRoll.jsp");
                 break;
             case "View History":
-                response.sendRedirect("./ClientRoll.jsp");
+                response.sendRedirect("./historyuser.jsp");
+                break;
+            case "View History Room":
+                response.sendRedirect("./historymanager.jsp");
+                break;
+            case "View History User":
+                response.sendRedirect("./historyalluser.jsp");
                 break;
             default:
                 System.out.println("fail");
