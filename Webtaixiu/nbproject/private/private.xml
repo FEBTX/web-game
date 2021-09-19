@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/src/java/DAO/DAOUser.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/src/java/DTO/HistoryRoom.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/src/java/Server/RollServer.java</file>
@@ -20,6 +21,12 @@
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/web/usermanger.jsp</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/src/java/Controlller/Login.java</file>
             <file>file:/C:/Users/Admin/Documents/NetBeansProjects/Webtaixiu/src/java/Server/ResultRoll.java</file>
+=======
+            <file>file:/C:/Users/gbuid/OneDrive/Desktop/web-game/Webtaixiu/web/index.jsp</file>
+            <file>file:/C:/Users/gbuid/OneDrive/Desktop/web-game/Webtaixiu/web/ClientRoll.jsp</file>
+            <file>file:/C:/Users/gbuid/OneDrive/Desktop/web-game/Webtaixiu/web/css/login.css</file>
+            <file>file:/C:/Users/gbuid/OneDrive/Desktop/web-game/Webtaixiu/web/homepage.jsp</file>
+>>>>>>> fb543d89ea1618d41412235f1ad0a353760fffda
         </group>
     </open-files>
 </project-private>
