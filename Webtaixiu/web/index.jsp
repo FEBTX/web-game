@@ -20,6 +20,48 @@
         }
     </style>
     <body id="particles-js"></body>
+    <!-- scripts -->
+        <script src="particles.js-master/particles.js"></script>
+        <script src="particles.js-master/demo/js/app.js"></script>
+        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+        <script>
+            var pwd = document.getElementById('pwd');
+            var eye = document.getElementById('eye');
+
+            eye.addEventListener('click', togglePass);
+
+            function togglePass() {
+
+                eye.classList.toggle('active');
+
+                (pwd.type == 'password') ? pwd.type = 'text' : pwd.type = 'password';
+            }
+
+            // Form Validation
+
+            function checkStuff() {
+                var username = document.form1.username;
+                var password = document.form1.password;
+                var msg = document.getElementById('msg');
+
+                if (username.value == "") {
+                    msg.style.display = 'block';
+                    msg.innerHTML = "Please enter your Username";
+                    username.focus();
+                    return false;
+                } else {
+                    msg.innerHTML = "";
+                }
+
+                if (password.value == "") {
+                    msg.innerHTML = "Please enter your Password";
+                    password.focus();
+                    return false;
+                } else {
+                    msg.innerHTML = "";
+                }
+            }
+        </script>
     <div class="animate__animated animate__backInDown">
         <div class="container">
             <span class="error animate__animated animate__tada" id="msg"></span>
@@ -35,49 +77,5 @@
             <a href="register.jsp" class="dnthave">Don't have an account? Sign up</a>
         </div> 
     </div> 
-
-
-
-    <!-- scripts -->
-    <script src="particles.js-master/particles.js"></script>
-    <script src="particles.js-master/demo/js/app.js"></script>
-    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-    <script>
-                var pwd = document.getElementById('pwd');
-                var eye = document.getElementById('eye');
-
-                eye.addEventListener('click', togglePass);
-
-                function togglePass() {
-
-                    eye.classList.toggle('active');
-
-                    (pwd.type == 'password') ? pwd.type = 'text' : pwd.type = 'password';
-                }
-
-                // Form Validation
-
-                function checkStuff() {
-                    var username = document.form1.username;
-                    var password = document.form1.password;
-                    var msg = document.getElementById('msg');
-
-                    if (username.value == "") {
-                        msg.style.display = 'block';
-                        msg.innerHTML = "Please enter your Username";
-                        username.focus();
-                        return false;
-                    } else {
-                        msg.innerHTML = "";
-                    }
-
-                    if (password.value == "") {
-                        msg.innerHTML = "Please enter your Password";
-                        password.focus();
-                        return false;
-                    } else {
-                        msg.innerHTML = "";
-                    }
-                }
-    </script>
+    
 </html>

@@ -59,7 +59,7 @@ body, html {
     margin: 0;
     left: 50%;
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     text-align: center;
     transform: translateX(-50%);
     background-color: rgb( 33, 41, 66 );
@@ -180,7 +180,7 @@ label span {
 
 .dnthave{
     position: absolute;
-    top: 86%;
+    top: 90%;
     left: 24%;
 }
 
@@ -237,4 +237,8 @@ label span {
 
 .footer .fa {
     color: #7f5feb;;
+}
+
+#btn_play #btn_viewhistory #btn_changeInfomation{
+    position: absolute;
 }
