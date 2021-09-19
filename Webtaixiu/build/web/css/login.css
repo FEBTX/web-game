@@ -13,7 +13,6 @@ body, html {
 }
 
 .container{
-<<<<<<< HEAD
   margin: 0;
   top: 50px;
   left: 50%;
@@ -27,21 +26,6 @@ body, html {
   width: 400px;
   height: 500px;
   box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
-=======
-    margin: 0;
-    left: 50%;
-    position: absolute;
-    bottom: 100px;
-    text-align: center;
-    transform: translateX(-50%);
-    background-color: rgb( 33, 41, 66 );
-    border-radius: 9px;
-    border-top: 10px solid #79a6fe;
-    border-bottom: 10px solid #8BD17C;
-    width: 400px;
-    height: 500px;
-    box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
->>>>>>> fb543d89ea1618d41412235f1ad0a353760fffda
 }
 
 .box h4 {
@@ -152,11 +136,7 @@ label span {
 
 .dnthave{
     position: absolute;
-<<<<<<< HEAD
     top: 92%;
-=======
-    top: 90%;
->>>>>>> fb543d89ea1618d41412235f1ad0a353760fffda
     left: 24%;
 }
 
@@ -212,14 +192,5 @@ label span {
 }
 
 .footer .fa {
-<<<<<<< HEAD
   color: #7f5feb;;
 }
-=======
-    color: #7f5feb;;
-}
-
-#btn_play #btn_viewhistory #btn_changeInfomation{
-    position: absolute;
-}
->>>>>>> fb543d89ea1618d41412235f1ad0a353760fffda
