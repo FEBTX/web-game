@@ -21,7 +21,7 @@ public class User {
     private int winmatch;
     private int point;
     private float rating;
-
+   
     public int getId_user() {
         return id_user;
     }

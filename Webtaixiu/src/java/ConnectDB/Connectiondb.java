@@ -17,7 +17,6 @@ public class Connectiondb {
         try {
             Class.forName("com.mysql.jdbc.Driver");
              DriverManager.getConnection("jdbc:mysql://localhost/taixiu", "root", "");
-            System.out.println("Success");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }

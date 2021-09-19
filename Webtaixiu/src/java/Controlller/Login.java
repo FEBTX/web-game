@@ -39,48 +39,38 @@ public class Login extends HttpServlet {
         String User = request.getParameter("username");
         String Pass = request.getParameter("password");
         DAOUser dao = new DAOUser();
-        int Check = dao.login(User,Pass);
+        int Check = dao.login(User, Pass);
         System.out.println(Check);
-        if(Check == 1){
-             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
-                out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
-                out.println("<script>");
-                out.println("$(document).ready(function(){");
-                out.println("swal('Login Success!','successfull', 'success');");
-                out.println("});");
-                out.println("</script>");
-                 HttpSession session = request.getSession();
-                session.setAttribute("Check", "login");
-                session.setAttribute("Name", User);
-                  session.setAttribute("role", Check);
-                RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
-                rd.include(request, response);
-        } else if(Check == 2 ){
-              out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
-                out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
-                out.println("<script>");
-                out.println("$(document).ready(function(){");
-                out.println("swal('Login Success!','successfull', 'success');");
-                out.println("});");
-                out.println("</script>");
-                 HttpSession session = request.getSession();
-                session.setAttribute("Check", "login");
-                session.setAttribute("Name", User);
-                session.setAttribute("role", Check);
-                RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
-                rd.include(request, response);
-        }else{
+        if (Check == 1) {
             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
-                out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
-                out.println("<script>");
-                out.println("$(document).ready(function(){");
-                out.println("swal('Login Fail!','Your Username or Password is incorrect', 'error');");
-                out.println("});");
-                out.println("</script>");
-                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-                rd.include(request, response);
+            out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+            out.println("<script>");
+            out.println("$(document).ready(function(){");
+            out.println("swal('Login Success!','successfull', 'success');");
+            out.println("});");
+            out.println("</script>");
+            HttpSession session = request.getSession();
+            session.setAttribute("Check", "login");
+            session.setAttribute("Name", User);
+            session.setAttribute("role", Check);
+            RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+            rd.include(request, response);
+        } else if (Check == 2) {
+            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
+            out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+            out.println("<script>");
+            out.println("$(document).ready(function(){");
+            out.println("swal('Login Success!','successfull', 'success');");
+            out.println("});");
+            out.println("</script>");
+            HttpSession session = request.getSession();
+            session.setAttribute("Check", "login");
+            session.setAttribute("Name", User);
+            session.setAttribute("role", Check);
+            RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+            rd.include(request, response);
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

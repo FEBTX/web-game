@@ -8,12 +8,12 @@ and open the template in the editor.
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <body>
-        
+
         <div>
-              <h1>Roll</h1>
-        <img class="img1" src="img/dice6.png">
-        <img class="img2" src="img/dice6.png">
-        <img class="img3" src="img/dice6.png">    
+            <h1>Roll</h1>
+            <img class="img1" src="img/dice6.png">
+            <img class="img2" src="img/dice6.png">
+            <img class="img3" src="img/dice6.png">    
         </div>
         <input id="textMessage" type="text" />
         <input onclick="sendMessage()" value="Send Message" type="button" /> <br/><br/>
@@ -53,45 +53,44 @@ and open the template in the editor.
                     textMessage.value = "";
                 }
             }
-              function rollTheDice() {
-            setTimeout(function () {
-                var dice1 = Math.floor(Math.random() * 6) + 1;
-                var dice2 = Math.floor(Math.random() * 6) + 1;
-                var dice3 = Math.floor(Math.random() * 6) + 1;
-                document.querySelector(".img1").setAttribute("src",
-                        "img/dice" + dice1 + ".png");
+            function rollTheDice() {
+                setTimeout(function () {
+                    var dice1 = Math.floor(Math.random() * 6) + 1;
+                    var dice2 = Math.floor(Math.random() * 6) + 1;
+                    var dice3 = Math.floor(Math.random() * 6) + 1;
+                    document.querySelector(".img1").setAttribute("src",
+                            "img/dice" + dice1 + ".png");
 
-                document.querySelector(".img2").setAttribute("src",
-                        "img/dice" + dice2 + ".png");
-                document.querySelector(".img3").setAttribute("src",
-                        "img/dice" + dice3 + ".png");
-                if (dice1 + dice2 + dice3 < 10) {
-                    document.querySelector("h1").innerHTML = "Xỉu";
-                    document.getElementById("textMessage").value = dice1 + "" + dice2 + "" + dice3; 
-                    sendMessage();
-                } else {
-                    document.querySelector("h1").innerHTML = "Tài";
-                     document.getElementById("textMessage").value = dice1 + "" + dice2 + "" + dice3; 
-                     sendMessage();
-                }
-            }, 10);
+                    document.querySelector(".img2").setAttribute("src",
+                            "img/dice" + dice2 + ".png");
+                    document.querySelector(".img3").setAttribute("src",
+                            "img/dice" + dice3 + ".png");
+                    if (dice1 + dice2 + dice3 < 10) {
+                        document.querySelector("h1").innerHTML = "Xỉu";
+                        document.getElementById("textMessage").value = dice1 + "" + dice2 + "" + dice3;
+                        sendMessage();
+                    } else {
+                        document.querySelector("h1").innerHTML = "Tài";
+                        document.getElementById("textMessage").value = dice1 + "" + dice2 + "" + dice3;
+                        sendMessage();
+                    }
+                }, 10);
 
-        }
-        function delay(ms) {
-            return new Promise(resolve => {
-                setTimeout(resolve, ms);
-            });
-        }
+            }
+            function delay(ms) {
+                return new Promise(resolve => {
+                    setTimeout(resolve, ms);
+                });
+            }
 
 // function that will print the numbers in correct order, with delays
-        async function print(num) {
-            for (let i = 1; i <= num; i++) {
-
-                await delay(2000); // wait 
-                rollTheDice();
+            async function Roll(num) {
+                for (let i = 1; i <= num; i++) {
+                    await delay(20000); // wait 
+                    rollTheDice();
+                }
             }
-        }
-        print(999);
+            Roll(999);
 
         </script>
     </body>

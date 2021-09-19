@@ -6,9 +6,13 @@
 package DAO;
 
 import ConnectDB.Connectiondb;
+import DTO.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import org.omg.PortableInterceptor.USER_EXCEPTION;
 
 /**
  *
@@ -41,4 +45,31 @@ public class DAOUser {
         }
         return 0;
     }
+        public ArrayList<User> getUser() {
+        ArrayList<User> listuser = new ArrayList<>();
+
+        try {
+            conn = temp.connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM user where role = 1");
+            while (rs.next()) {                
+                User user = new User();
+                user.setId_user(rs.getInt(1));
+                user.setFullname(rs.getString(2));
+                user.setPhone(rs.getString(3));
+                user.setAddress(rs.getString(4));
+                user.setUser_name(rs.getString(5));
+                user.setPassword(rs.getString(6));
+                user.setMatchpalyed(rs.getInt(7));
+                user.setWinmatch(rs.getInt(8));
+                user.setPoint(rs.getInt(9));
+                user.setRating(rs.getInt(10));
+                listuser.add(user);
+            }
+        
+        }catch(Exception e){
+            
+        }
+        return listuser;
+        }
 }

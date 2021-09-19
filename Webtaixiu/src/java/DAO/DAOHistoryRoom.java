@@ -6,8 +6,15 @@
 package DAO;
 
 import ConnectDB.Connectiondb;
+import static DAO.DAOUser.conn;
+import static DAO.DAOUser.temp;
+import DTO.HistoryRoom;
+import DTO.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -32,5 +39,27 @@ public class DAOHistoryRoom {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public ArrayList<HistoryRoom> getHistory() {
+        ArrayList<HistoryRoom> historyRooms = new ArrayList<>();
+        try {
+            conn = temp.connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM history_room");
+            while (rs.next()) {
+                HistoryRoom history = new HistoryRoom();
+                history.setId_room(rs.getInt(1));
+                history.setResult(rs.getString(2));
+                history.setStatus(rs.getInt(3));
+                history.setTotal_played(rs.getInt(4));
+                history.setTotalNumber(rs.getInt(5));
+                historyRooms.add(history);
+            }
+
+        } catch (Exception e) {
+
+        }
+        return historyRooms;
     }
 }
