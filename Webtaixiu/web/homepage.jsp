@@ -29,6 +29,7 @@
                 <input type="submit" name="btn_homepage" value="Play">     
                 <input type="submit" name="btn_homepage" value="View History Room">
                  <input type="submit" name="btn_homepage" value="View History User"> 
+                  <input type="submit" name="btn_homepage" value="View User"> 
                 <%
                 } else {
                 %>

@@ -65,11 +65,11 @@ and open the template in the editor.
                         if (bet == 2) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            sendResult("thang","xiu", xubet.value,ab[1]);
+                            sendResult("thang","xiu", xubet.value,xubet.value*1,5,ab[1]);
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
                         } else {
-                            sendResult("thua","xiu", xubet.value,ab[1]);
+                            sendResult("thua","xiu", xubet.value,0,ab[1]);
                             bet = 0;
                             document.querySelector("h2").innerHTML = "Bạn thua";
                         }
@@ -78,13 +78,13 @@ and open the template in the editor.
                         if (bet == 1) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            sendResult("thang","tai", xubet.value,ab[1]);
+                            sendResult("thang","tai", xubet.value,xubet.value*1,5,ab[1]);
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
    
                         } else {
                             bet = 0;
-                           sendResult("thua","tai", xubet.value,ab[1]);
+                           sendResult("thua","tai", xubet.value,0,ab[1]);
                             document.querySelector("h2").innerHTML = "Bạn thua";
                         }
                         document.querySelector("h1").innerHTML = "Tài";
@@ -133,9 +133,9 @@ and open the template in the editor.
             reusltserver.onerror = function (message1) {
                 processError(message1);
             };
-            function sendResult(result,bet,xubet,idroom) {
+            function sendResult(result,bet,xubet,xuresult,idroom) {
                 if (typeof reusltserver != 'undefined' && reusltserver.readyState == WebSocket.OPEN) {
-                    reusltserver.send(document.getElementById("id_user").value + "/" + result + "/" +bet + "/" + xubet + "/" + xubet*1.5 + "/" + idroom);
+                    reusltserver.send(document.getElementById("id_user").value + "/" + result + "/" +bet + "/" + xubet + "/" + xuresult + "/" + idroom);
                 }
             }
         </script>

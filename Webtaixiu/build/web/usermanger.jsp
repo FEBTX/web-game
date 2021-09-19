@@ -23,8 +23,6 @@
                     <th>Full Name</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Match Played</th>
-                    <th>Win Match</th>
                     <th>Point</th>
                     <th>Rating</th>
                 </tr>
@@ -39,8 +37,6 @@
                     <td><%=user.getFullname()%></td>
                     <td><%=user.getPhone()%></td>
                     <td><%=user.getAddress()%></td>
-                    <td><%=user.getMatchpalyed()%></td><!--  -->
-                    <td><%=user.getWinmatch()%></td><!--  -->
                     <td><%=user.getPoint()%></td><!--  -->
                     <td><%=user.getRating()%></td><!--  -->
                 </tr>
@@ -54,8 +50,6 @@
                     <th>Full Name</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Match Played</th>
-                    <th>Win Match</th>
                     <th>Point</th>
                     <th>Rating</th>
                 </tr>

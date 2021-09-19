@@ -5,8 +5,11 @@
  */
 package Controlller;
 
+import DAO.DAOUser;
+import DTO.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,7 +46,11 @@ public class DirectController extends HttpServlet {
                     response.sendRedirect("./ServerRoll.jsp");
 
                 } else {
-                    response.sendRedirect("./ClientRoll.jsp");
+                    DAOUser daouser = new DAOUser();
+                    User user = daouser.getUserbyUsername(session.getAttribute("Name").toString());
+                    session.setAttribute("point", user.getPoint());
+                    RequestDispatcher rd = request.getRequestDispatcher("./ClientRoll.jsp");
+                    rd.include(request, response);
                 }
                 break;
             case "Change Infomation":
@@ -57,6 +64,9 @@ public class DirectController extends HttpServlet {
                 break;
             case "View History User":
                 response.sendRedirect("./historyalluser.jsp");
+                break;
+            case "View User":
+                response.sendRedirect("./usermanger.jsp");
                 break;
             default:
                 System.out.println("fail");
