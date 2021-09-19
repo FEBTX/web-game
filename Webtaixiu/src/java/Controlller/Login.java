@@ -40,7 +40,6 @@ public class Login extends HttpServlet {
         String Pass = request.getParameter("password");
         DAOUser dao = new DAOUser();
         int Check = dao.login(User, Pass);
-        System.out.println(Check);
         if (Check == 1) {
             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
             out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
@@ -52,8 +51,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("Check", "login");
             session.setAttribute("Name", User);
-            session.setAttribute("role", Check);
-            RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/homepageadmin.jsp");
             rd.include(request, response);
         } else if (Check == 2) {
             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
@@ -66,7 +64,6 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("Check", "login");
             session.setAttribute("Name", User);
-            session.setAttribute("role", Check);
             RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
             rd.include(request, response);
         }

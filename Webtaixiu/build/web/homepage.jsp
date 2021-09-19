@@ -11,20 +11,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            String role = session.getAttribute("role").toString();
-            if (role.equals("1")) {
-        %>
-        <a href="ServerRoll.jsp">Start Server</a>
-        <a href="historymanager.jsp">History Room</a>
-        <a href="usermanger.jsp">User Manger</a>
-        <%
-        } else {
-        %>
         <a href="ClientRoll.jsp">play</a>
-        <%
-            }
-        %>
-
     </body>
 </html>
