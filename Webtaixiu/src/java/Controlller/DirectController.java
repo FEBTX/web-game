@@ -12,13 +12,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Admin
  */
 @WebServlet(name = "Playgame", urlPatterns = {"/Playgame"})
-public class Playgame extends HttpServlet {
+public class DirectController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,17 +33,27 @@ public class Playgame extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Playgame</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Playgame at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        String btn_value = request.getParameter("btn_homepage");
+        HttpSession session = request.getSession();
+        String Role = session.getAttribute("role").toString();
+        switch (btn_value) {
+            case "Play":
+                if (Role.equals("1")) {
+                    response.sendRedirect("./ServerRoll.jsp");
+
+                } else {
+                    response.sendRedirect("./ClientRoll.jsp");
+                }
+                break;
+            case "Change Infomation":
+                response.sendRedirect("./ClientRoll.jsp");
+                break;
+            case "View History":
+                response.sendRedirect("./ClientRoll.jsp");
+                break;
+            default:
+                System.out.println("fail");
         }
     }
 
