@@ -26,14 +26,13 @@
                     String role = session.getAttribute("role").toString();
                     if (role.equals("1")) {
                 %>
-                <a href="ServerRoll.jsp" id="btn_play" >play</a>                
+                <input type="submit" name="btn_homepage" value="Play">               
                 <%
                 } else {
                 %>
                 <input type="submit" name="btn_homepage" value="Play"> 
-                <a type="button" href="ClientRoll.jsp" id="btn_play">Play</a>
-                <a href="#" id="btn_changeInfomation">Change Infomation</a>
-                <a href="#" id="btn_viewhistory">View History</a>
+                <input type="submit" name="btn_homepage" value="Change Infomation"> 
+                <input type="submit" name="btn_homepage" value="View History"> 
                 <%
                     }
                 %>

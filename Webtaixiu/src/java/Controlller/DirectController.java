@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,8 +35,25 @@ public class DirectController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String btn_value = request.getParameter("btn_homepage");
-        if(btn_value == "Play"){
-            response.sendRedirect("./ClientRoll");
+        HttpSession session = request.getSession();
+        String Role = session.getAttribute("role").toString();
+        switch (btn_value) {
+            case "Play":
+                if (Role.equals("1")) {
+                    response.sendRedirect("./ServerRoll.jsp");
+
+                } else {
+                    response.sendRedirect("./ClientRoll.jsp");
+                }
+                break;
+            case "Change Infomation":
+                response.sendRedirect("./ClientRoll.jsp");
+                break;
+            case "View History":
+                response.sendRedirect("./ClientRoll.jsp");
+                break;
+            default:
+                System.out.println("fail");
         }
     }
 
