@@ -193,12 +193,7 @@ label span {
 
 .footer .fa {
   color: #7f5feb;
-
+}
 #btn_play, #btn_viewhistory, #btn_changeInfomation {
-    position: absolute;
-<<<<<<< HEAD
-}
-}
-=======
-}
->>>>>>> 36bd57707040f22503473016bcc62e6a014f28c1
+    margin: 10px;
+}z
