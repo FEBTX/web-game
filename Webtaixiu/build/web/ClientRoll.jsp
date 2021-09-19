@@ -18,7 +18,7 @@ and open the template in the editor.
             <img class="img2" src="img/dice6.png">
             <img class="img3" src="img/dice6.png">
         </div>
-        <h2>Bạn chọn : </h2>
+        <h2>Bạn chọn: </h2>
         <h3></h3>
         <input id="xubet">
         <input id="tai" value="Tài" onclick="checkwinTai()" type="button">
