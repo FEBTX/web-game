@@ -25,20 +25,25 @@ public class DAOHistoryRoom {
     static Connectiondb temp = new Connectiondb();
     static Connection conn;
 
-    public static void InsertHistoryRoom(String result, int total) {
+    public static long InsertHistoryRoom(String result, int total) {
+        long primaryKey = 0;
         try {
             conn = temp.connect();
-            PreparedStatement stmt = conn.prepareStatement("Insert into history_room values(?, ?, ?, ?, ?)");
+            PreparedStatement stmt = conn.prepareStatement("Insert into history_room values(?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             stmt.setInt(1, 0);
             stmt.setString(2, result);
             stmt.setInt(3, 1);
             stmt.setInt(4, 1);
             stmt.setInt(5, total);
             stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return primaryKey = rs.getLong(1);
 
         } catch (Exception e) {
             System.out.println(e);
         }
+        return primaryKey;
     }
 
     public ArrayList<HistoryRoom> getHistory() {

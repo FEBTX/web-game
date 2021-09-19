@@ -26,7 +26,7 @@
                     String role = session.getAttribute("role").toString();
                     if (role.equals("1")) {
                 %>
-                <a href="ServerRoll.jsp" id="btn_play" >play</a>
+                <a href="ServerRoll.jsp" id="btn_play" >play</a>                
                 <%
                 } else {
                 %>

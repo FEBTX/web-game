@@ -50,7 +50,9 @@ and open the template in the editor.
                 setDedefault();
                 setTimeout(function () {
                     console.log(message);
-                    const a = message.data.split("");
+                    const ab = message.data.split("/");
+                    const a = ab[0];
+                    
                     console.log(a);
                     document.querySelector(".img1").setAttribute("src",
                             "img/dice" + a[0] + ".png");
@@ -63,12 +65,11 @@ and open the template in the editor.
                         if (bet == 2) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            sendResult();
+                            sendResult("thua", xubet.value,ab[1]);
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
-                            sendResult();
                         } else {
-                            sendResult();
+                            sendResult("thua", xubet.value,ab[1]);
                             bet = 0;
                             document.querySelector("h2").innerHTML = "Bạn thua";
                         }
@@ -77,13 +78,13 @@ and open the template in the editor.
                         if (bet == 1) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            sendResult();
+                            sendResult("thua", xubet.value,ab[1]);
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
-                           sendResult();
+   
                         } else {
                             bet = 0;
-                           sendResult();
+                           sendResult("thua", xubet.value,ab[1]);
                             document.querySelector("h2").innerHTML = "Bạn thua";
                         }
                         document.querySelector("h1").innerHTML = "Tài";
@@ -132,9 +133,9 @@ and open the template in the editor.
             reusltserver.onerror = function (message1) {
                 processError(message1);
             };
-            function sendResult() {
+            function sendResult(result,xubet,idroom) {
                 if (typeof reusltserver != 'undefined' && reusltserver.readyState == WebSocket.OPEN) {
-                    reusltserver.send(document.getElementById("id_user").value + "ok" + xubet.value);
+                    reusltserver.send(document.getElementById("id_user").value + "" + result + "" + xubet + "" + xubet*1.5 + "" + idroom);
                 }
             }
         </script>

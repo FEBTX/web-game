@@ -28,13 +28,16 @@ public class RollServer {
 			userSession.getBasicRemote().sendText("System: you are connectd as " + message);
 		} else {
 			for (Session session : users) {
-				session.getBasicRemote().sendText(message);
                                 String a[] = message.split("");
                                int total = Integer.parseInt(a[0]) + Integer.parseInt(a[1]) + Integer.parseInt(a[2]);
                                if(total < 10){
-                                  DAOHistoryRoom.InsertHistoryRoom("xiu", total);
+                                 long idroom = DAOHistoryRoom.InsertHistoryRoom("xiu", total);
+                                session.getBasicRemote().sendText(message + "/" + idroom);
+                                   System.out.println(idroom);
                                }else{
-                                  DAOHistoryRoom.InsertHistoryRoom("tai", total);
+                                   long idroom = DAOHistoryRoom.InsertHistoryRoom("tai", total);
+                                   session.getBasicRemote().sendText(message + "/" + idroom);
+                                   System.out.println(idroom);
                                }
 			}
 		}
