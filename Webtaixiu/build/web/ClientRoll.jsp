@@ -29,8 +29,12 @@ and open the template in the editor.
         <script type="text/javascript">
             var total = 0;
             var bet = 0;
+<<<<<<< HEAD
             const pointuser = point.value;
             var websocket = new WebSocket("ws://localhost:8080/Webtaixiu/Playgame");
+=======
+            var websocket = new WebSocket("ws://localhost:8084/Webtaixiu/Playgame");
+>>>>>>> d0eb77676413475a6e620ddd76b4087c846c7f99
             websocket.onopen = function (message) {
                 processOpen(message);
             };

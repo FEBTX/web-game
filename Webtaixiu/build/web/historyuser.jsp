@@ -13,17 +13,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="css/login.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <body id="particles-js">        
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap4.min.js"></script>
+        <script src="particles.js-master/particles.js"></script>
+        <script src="particles.js-master/demo/js/app.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
+    </body>
+    <div class="container" style="width: 1500px; width: 1500px">
+        <table id="example" class="styled-table">
             <thead>
                 <tr>
-                    <th>Id Room</th>
+                    <th style="border-top-left-radius: 8px">Room ID</th>
                     <th>Result</th>
-                    <th>Bet</th>
+                    <th>Your Bet</th>
                     <th>Bet Point</th>
-                    <th>Bet Win</th>
+                    <th style="border-top-right-radius: 8px">Win Point</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,23 +56,7 @@
                     }
                 %>
             </tbody>
-            <tfoot>
-                <tr>
-                   <th>Id Room</th>
-                    <th>Result</th>
-                    <th>Bet</th>
-                    <th>Bet Point</th>
-                    <th>Bet Win</th>
-                </tr>
-            </tfoot>
+            <tfoot
         </table>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap4.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#example').DataTable();
-            });
-        </script>
-    </body>
+    </div>
 </html>
