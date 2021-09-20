@@ -28,11 +28,12 @@
                 %>
                 <input type="submit" name="btn_homepage" value="Play">     
                 <input type="submit" name="btn_homepage" value="View History Room">
-                 <input type="submit" name="btn_homepage" value="View History User"> 
-                  <input type="submit" name="btn_homepage" value="View User"> 
+                <input type="submit" name="btn_homepage" value="View History User"> 
+                <input type="submit" name="btn_homepage" value="View User"> 
                 <%
                 } else {
                 %>
+                <a href="/"><button className="bn632-hover bn20">Button</button></a>
                 <input type="submit" name="btn_homepage" value="Play"> 
                 <input type="submit" name="btn_homepage" value="Change Infomation"> 
                 <input type="submit" name="btn_homepage" value="View History"> 

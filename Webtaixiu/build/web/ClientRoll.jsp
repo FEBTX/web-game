@@ -26,7 +26,7 @@ and open the template in the editor.
         <script type="text/javascript">
             var total = 0;
             var bet = 0;
-            var websocket = new WebSocket("ws://localhost:8080/Webtaixiu/Playgame");
+            var websocket = new WebSocket("ws://localhost:8084/Webtaixiu/Playgame");
             websocket.onopen = function (message) {
                 processOpen(message);
             };

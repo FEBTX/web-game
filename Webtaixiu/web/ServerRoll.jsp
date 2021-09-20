@@ -19,7 +19,7 @@ and open the template in the editor.
         <input onclick="sendMessage()" value="Send Message" type="button" /> <br/><br/>
         <textarea id="textAreaMessage" rows="10" cols="50"></textarea>
         <script type="text/javascript">
-            var websocket = new WebSocket("ws://localhost:8080/Webtaixiu/Playgame");
+            var websocket = new WebSocket("ws://localhost:8084/Webtaixiu/Playgame");
             websocket.onopen = function (message) {
                 processOpen(message);
             };
