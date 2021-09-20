@@ -8,17 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.1.2/src/font/typicons.min.css">
     </head>
-    <style>
-        @font-face {
-            font-family: "typicons";
-            src: url("typicons.eot?b99ba6e7256a27d29176cef7fc322738?#iefix") format("embedded-opentype"),
-                url("typicons.woff2?b99ba6e7256a27d29176cef7fc322738") format("woff2"),
-                url("typicons.woff?b99ba6e7256a27d29176cef7fc322738") format("woff"),
-                url("typicons.ttf?b99ba6e7256a27d29176cef7fc322738") format("truetype"),
-                url("typicons.svg?b99ba6e7256a27d29176cef7fc322738#typicons") format("svg");
-        }
-    </style>
     <body id="particles-js"></body>
     <div class="animate__animated animate__backInDown">
         <div class="container">

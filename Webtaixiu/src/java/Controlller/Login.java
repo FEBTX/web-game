@@ -6,6 +6,7 @@
 package Controlller;
 
 import DAO.DAOUser;
+import DTO.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -50,6 +51,8 @@ public class Login extends HttpServlet {
             out.println("</script>");
             HttpSession session = request.getSession();
             session.setAttribute("Check", "login");
+            User user = dao.getUserbyUsername(session.getAttribute("Name").toString());
+            session.setAttribute("point", user.getPoint());
             session.setAttribute("Name", User);
             session.setAttribute("role", Check);
             RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
@@ -64,6 +67,8 @@ public class Login extends HttpServlet {
             out.println("</script>");
             HttpSession session = request.getSession();
             session.setAttribute("Check", "login");
+            User user = dao.getUserbyUsername(session.getAttribute("Name").toString());
+            session.setAttribute("point", user.getPoint());
             session.setAttribute("Name", User);
             session.setAttribute("role", Check);
             RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");

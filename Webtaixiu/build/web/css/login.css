@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
-
+@font-face {
+  font-family: 'typicons';
+  src: url("path/to/typicons.eot");
+  src: url("path/to/typicons.eot?#iefix") format('embedded-opentype'),
+       url("path/to/typicons.woff") format('woff'),
+       url("path/to/typicons.ttf") format('truetype'),
+       url("path/to/typicons.svg#typicons") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 body, html {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #1d243d;
+    background-color: #1d243d;  
     padding: 0;
     margin: 0;
 }
@@ -204,7 +213,7 @@ label span {
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 100%;
+    width: 1000px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     background-color: white;
     border-radius: 8px;
@@ -212,7 +221,7 @@ label span {
 .styled-table thead tr{
     background-color: #79a6fe;
     color: #ffffff;
-    text-align: left;   
+    text-align: center;   
 }
 .styled-table th,
 .styled-table td {
@@ -239,48 +248,49 @@ label span {
     text-align: left;
     font-weight: 400;
     font-size: 1rem;
+    margin-bottom: 15px;
 }
 #example_wrapper{
     margin-top: 15px;
 }
 .bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+    font-size: 23px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 30px;
+    height: 90px;
+    width: 250px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
 .bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
 .bn632-hover:focus {
-  outline: none;
+    outline: none;
 }
 
 .bn632-hover.bn20 {
     background-image: linear-gradient(
-      to right,
-      #667eea,
-      #764ba2,
-      #6b8dd6,
-      #8e37d7
-    );
+        to right,
+        #667eea,
+        #764ba2,
+        #6b8dd6,
+        #8e37d7
+        );
     box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
 
