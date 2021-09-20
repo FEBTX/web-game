@@ -21,26 +21,25 @@
     </div>
     <div class="animate__animated animate__backInDown">
         <div class="container" style="width: 700px; height: 300px; top: 250px" >
-            <form name="form1" method="POST" action="Playgame">
-                <%
-                    String role = session.getAttribute("role").toString();
-                    if (role.equals("1")) {
-                %>
-                <input type="submit" name="btn_homepage" value="Play">     
-                <input type="submit" name="btn_homepage" value="View History Room">
-                <input type="submit" name="btn_homepage" value="View History User"> 
-                <input type="submit" name="btn_homepage" value="View User"> 
-                <%
-                } else {
-                %>
-                <a href="/"><button className="bn632-hover bn20">Button</button></a>
-                <input type="submit" name="btn_homepage" value="Play"> 
-                <input type="submit" name="btn_homepage" value="Change Infomation"> 
-                <input type="submit" name="btn_homepage" value="View History"> 
-                <%
-                    }
-                %>
-            </form>
+            <%
+                String role = session.getAttribute("role").toString();
+                if (role.equals("1")) {
+            %>
+            <a href="/"><button className="bn632-hover bn20">Button</button></a>
+            <input type="submit" name="btn_homepage" value="Play">     
+            <input type="submit" name="btn_homepage" value="View History Room">
+            <input type="submit" name="btn_homepage" value="View History User"> 
+            <input type="submit" name="btn_homepage" value="View User"> 
+            <%
+            } else {
+            %>
+            <a href="/"><button className="bn632-hover bn20">Button</button></a>
+            <input type="submit" name="btn_homepage" value="Play"> 
+            <input type="submit" name="btn_homepage" value="Change Infomation"> 
+            <input type="submit" name="btn_homepage" value="View History"> 
+            <%
+                }
+            %>
         </div>
     </div>
     <script src="particles.js-master/particles.js"></script>
