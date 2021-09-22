@@ -28,7 +28,7 @@
             });
         </script>
     </body>
-    <div class="container" style="width: 1500px; width: 1500px">
+    <div class="container" style="width: max-content;height: max-content;">
         <table id="example" class="styled-table">
             <thead>
                 <tr>

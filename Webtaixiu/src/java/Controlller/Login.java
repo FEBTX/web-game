@@ -6,6 +6,7 @@
 package Controlller;
 
 import DAO.DAOUser;
+import DTO.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -52,7 +53,7 @@ public class Login extends HttpServlet {
             session.setAttribute("Check", "login");
             session.setAttribute("Name", User);
             session.setAttribute("role", Check);
-            RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("./homepage.jsp");
             rd.include(request, response);
         } else if (Check == 2) {
             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
@@ -66,7 +67,9 @@ public class Login extends HttpServlet {
             session.setAttribute("Check", "login");
             session.setAttribute("Name", User);
             session.setAttribute("role", Check);
-            RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+            User user = dao.getUserbyUsername(session.getAttribute("Name").toString());
+            session.setAttribute("point", user.getPoint());
+            RequestDispatcher rd = request.getRequestDispatcher("./homepage.jsp");
             rd.include(request, response);
         } else {
             out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
@@ -76,7 +79,7 @@ public class Login extends HttpServlet {
             out.println("swal('Login Fail!','Your Username or Password is incorrect', 'error');");
             out.println("});");
             out.println("</script>");
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("./index.jsp");
             rd.include(request, response);
         }
 
