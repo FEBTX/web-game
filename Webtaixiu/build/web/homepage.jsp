@@ -22,7 +22,6 @@
             </a>
         </div>
     </div>
-    <form action="Playgame" method="POST">
     <div class="animate__animated animate__backInDown">
         <div class="container" style="width: 700px; height: 50px; top: 100px;" >    
         </div>
@@ -48,7 +47,6 @@
             %>
         </div>
     </div>
-        </form>
     <script src="particles.js-master/particles.js"></script>
     <script src="particles.js-master/demo/js/app.js"></script>
 </html>

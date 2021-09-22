@@ -23,7 +23,8 @@ public class DAOHistory {
 
     static Connectiondb temp = new Connectiondb();
     static Connection conn;
-
+    int totalplayed = 0;
+    int totalwin = 0;
     public static void InsertHistory(String user_name, String betresult, String bet, int betpoint, int betwin, int room_id) {
         try {
             conn = temp.connect();
@@ -60,6 +61,12 @@ public class DAOHistory {
         } catch (Exception e) {
 
         }
+        for(History history : listhistory){
+            if(history.getBetresult().equals("thang")){
+                totalwin +=1;
+            }
+        }
+        totalplayed = listhistory.size();
         return listhistory;
     }
  public ArrayList<History> getHistoryallUser() {
@@ -84,4 +91,9 @@ public class DAOHistory {
         }
         return listhistory;
     }
+     public  float getRating(String Username){
+         getHistorybyUsername(Username);
+         float rating =(float) totalwin/totalplayed;
+         return rating * 100;
+     }
 }

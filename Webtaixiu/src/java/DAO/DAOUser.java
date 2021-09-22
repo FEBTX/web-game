@@ -97,4 +97,30 @@ public class DAOUser {
         }
         return user;
     }
+      public  void UpdateResultUser(String username, int point) {
+          DAOHistory dao = new DAOHistory();
+        try {
+            conn = temp.connect();
+            PreparedStatement stmt = conn.prepareStatement("UPDATE user set point=?,rating=? where user_name = ? ");
+            stmt.setInt(1, point);
+            stmt.setFloat(2, dao.getRating(username));
+            stmt.setString(3, username);
+            stmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("loi" +e);
+        }
+    }
+        public  void UpdatePoint(String username, int point) {
+        try {
+            conn = temp.connect();
+            PreparedStatement stmt = conn.prepareStatement("UPDATE user set point=? where user_name = ? ");
+            stmt.setInt(1, point);
+            stmt.setString(2, username);
+            stmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

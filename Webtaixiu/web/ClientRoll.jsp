@@ -1,4 +1,6 @@
 
+<%@page import="DTO.User"%>
+<%@page import="DAO.DAOUser"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,10 +12,12 @@ and open the template in the editor.
     <body>
         <%
             String user_id = (String) session.getAttribute("Name").toString();
-            int point = (int) session.getAttribute("point");
+              DAOUser daouser = new DAOUser();
+            User user =  daouser.getUserbyUsername(user_id);
         %>
+        <a href="PayGame.jsp">Nạp Tiền</a>
         <input id="id_user" value="<%=user_id%>" readonly>
-        <input id="point" value="<%=point%>" readonly>
+        <input id="point" value="<%=user.getPoint()%>" readonly>
         <div>
             <h1>Roll</h1>
             <img class="img1" src="img/dice6.png">
@@ -29,12 +33,8 @@ and open the template in the editor.
         <script type="text/javascript">
             var total = 0;
             var bet = 0;
-<<<<<<< HEAD
             const pointuser = point.value;
             var websocket = new WebSocket("ws://localhost:8080/Webtaixiu/Playgame");
-=======
-            var websocket = new WebSocket("ws://localhost:8084/Webtaixiu/Playgame");
->>>>>>> d0eb77676413475a6e620ddd76b4087c846c7f99
             websocket.onopen = function (message) {
                 processOpen(message);
             };
@@ -73,9 +73,9 @@ and open the template in the editor.
                         if (bet == 2) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            let xuafterbet = Number(pointuser) + Number(xubet.value * 1, 5);
+                            let xuafterbet = Number(pointuser) + Number(xubet.value *1.5);
                             point.value = xuafterbet;
-                            sendResult("thang", "xiu", xubet.value, xubet.value * 1, 5, ab[1]);
+                            sendResult("thang", "xiu", xubet.value, xubet.value * 1.5, ab[1]);
 
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
@@ -89,11 +89,11 @@ and open the template in the editor.
                         document.querySelector("h1").innerHTML = "Xỉu";
                     } else {
                         if (bet == 1) {
-                            let xuafterbet = Number(pointuser) + Number(xubet.value * 1, 5);
+                            let xuafterbet = Number(pointuser) + Number(xubet.value * 1.5);
                             point.value = xuafterbet;
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            sendResult("thang", "tai", xubet.value, xubet.value * 1, 5, ab[1]);
+                            sendResult("thang", "tai", xubet.value, xubet.value * 1.5, ab[1]);
                         } else if (bet == 0) {
                             document.querySelector("h2").innerHTML = "Bạn chưa đặt";
 

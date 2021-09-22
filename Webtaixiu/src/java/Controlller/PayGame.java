@@ -21,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-@WebServlet(name = "Playgame", urlPatterns = {"/Playgame"})
-public class DirectController extends HttpServlet {
+@WebServlet(name = "PayGame", urlPatterns = {"/PayGame"})
+public class PayGame extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,41 +36,13 @@ public class DirectController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-//        String btn_value = request.getParameter("btn_homepage");
-//        HttpSession session = request.getSession();
-//        String Role = session.getAttribute("role").toString();
-//        switch (btn_value) {
-//            case "Play":
-//                if (Role.equals("1")) {
-//                    response.sendRedirect("./ServerRoll.jsp");
-//
-//                } else {
-//                    DAOUser daouser = new DAOUser();
-//                    User user = daouser.getUserbyUsername(session.getAttribute("Name").toString());
-//                    session.setAttribute("point", user.getPoint());
-//                    RequestDispatcher rd = request.getRequestDispatcher("./ClientRoll.jsp");
-//                    rd.include(request, response);
-//                }
-//                break;
-//            case "Change Infomation":
-//                response.sendRedirect("./ClientRoll.jsp");
-//                break;
-//            case "View History":
-//                response.sendRedirect("./historyuser.jsp");
-//                break;
-//            case "View History Room":
-//                response.sendRedirect("./historymanager.jsp");
-//                break;
-//            case "View History User":
-//                response.sendRedirect("./historyalluser.jsp");
-//                break;
-//            case "View User":
-//                response.sendRedirect("./usermanger.jsp");
-//                break;
-//            default:
-//                System.out.println("fail");
-//        }
+        int point = Integer.parseInt(request.getParameter("point").toString());
+        DAOUser daouser = new DAOUser();
+        HttpSession session = request.getSession();
+        String user_name = (String) session.getAttribute("Name").toString();
+        User user = daouser.getUserbyUsername(user_name);
+        daouser.UpdatePoint(user_name, user.getPoint() + point);
+      response.sendRedirect("./ClientRoll.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

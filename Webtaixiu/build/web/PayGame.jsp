@@ -1,6 +1,6 @@
 <%-- 
-    Document   : homepageadmin
-    Created on : Sep 19, 2021, 5:42:52 PM
+    Document   : PayGame
+    Created on : Sep 23, 2021, 12:10:50 AM
     Author     : Admin
 --%>
 
@@ -12,8 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <a href="ServerRoll.jsp">Start Server</a>
-        <a href="historymanager.jsp">History Room</a>
-        <a href="usermanger.jsp">User Manger</a>
+        <form action="PayGame" method="POST">
+            <input type="text" name="point">
+            <button type="submit">Nạp</button>
+        </form>
     </body>
 </html>
