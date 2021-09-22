@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 @import url(https://fonts.googleapis.com/css?family=Oswald:400);
 @font-face {
-  font-family: 'typicons';
-  src: url("path/to/typicons.eot");
-  src: url("path/to/typicons.eot?#iefix") format('embedded-opentype'),
-       url("path/to/typicons.woff") format('woff'),
-       url("path/to/typicons.ttf") format('truetype'),
-       url("path/to/typicons.svg#typicons") format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'typicons';
+    src: url("path/to/typicons.eot");
+    src: url("path/to/typicons.eot?#iefix") format('embedded-opentype'),
+        url("path/to/typicons.woff") format('woff'),
+        url("path/to/typicons.ttf") format('truetype'),
+        url("path/to/typicons.svg#typicons") format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 body, html {
     font-family: 'Source Sans Pro', sans-serif;
@@ -296,53 +296,55 @@ label span {
 }
 
 .navigation {
-  width: 100%;
-  background-color: black;
+    width: 100%;
+    background-color: black;
 }
 
 img {
-  width: 25px;
-  border-radius: 50px;
-  float: left;
+    width: 25px;
+    border-radius: 50px;
+    float: left;
 }
 
 .logout {
-  font-size: .8em;
-  font-family: 'Oswald', sans-serif;
-	position: relative;
-  right: -18px;
-  bottom: -4px;
-  overflow: hidden;
-  letter-spacing: 3px;
-  opacity: 0;
-  transition: opacity .45s;
-  -webkit-transition: opacity .35s;
-  
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    right: -18px;
+    bottom: -4px;
+    overflow: hidden;
+    letter-spacing: 3px;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+
 }
 
 .button {
-	text-decoration: none;
-	float: right;
-  padding: 12px;
-  margin: 15px;
-  color: white;
-  width: 25px;
-  border-radius: 8px;
-  background-color: black;
-  transition: width .35s;
-  -webkit-transition: width .35s;
-  overflow: hidden
+    text-decoration: none;
+    float: right;
+    padding: 12px;
+    margin: 15px;
+    color: white;
+    width: 25px;
+    background-color: rgb( 33, 41, 66 );
+    border-radius: 9px;
+    border-top: 10px solid #79a6fe;
+    border-bottom: 10px solid #8BD17C;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden
 }
 
 a:hover {
-  width: 100px;
+    width: 100px;
 }
 
 a:hover .logout{
-  opacity: .9;
+    opacity: .9;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
