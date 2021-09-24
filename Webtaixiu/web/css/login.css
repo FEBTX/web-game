@@ -328,9 +328,9 @@ img {
     color: white;
     width: 25px;
     background-color: rgb( 33, 41, 66 );
-    border-radius: 9px;
-    border-top: 10px solid #79a6fe;
-    border-bottom: 10px solid #8BD17C;
+    border-radius: 8px;
+    border-top: 5px solid #79a6fe;
+    border-bottom: 5px solid #8BD17C;
     transition: width .35s;
     -webkit-transition: width .35s;
     overflow: hidden
