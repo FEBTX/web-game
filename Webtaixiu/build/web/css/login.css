@@ -300,7 +300,7 @@ label span {
     background-color: black;
 }
 
-img {
+#imgNav {
     width: 25px;
     border-radius: 50px;
     float: left;

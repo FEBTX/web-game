@@ -9,28 +9,44 @@ and open the template in the editor.
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-    <body>
-        <%
-            String user_id = (String) session.getAttribute("Name").toString();
-              DAOUser daouser = new DAOUser();
-            User user =  daouser.getUserbyUsername(user_id);
-        %>
-        <a href="PayGame.jsp">Nạp Tiền</a>
-        <input id="id_user" value="<%=user_id%>" readonly>
-        <input id="point" value="<%=user.getPoint()%>" readonly>
-        <div>
-            <h1>Roll</h1>
-            <img class="img1" src="img/dice6.png">
-            <img class="img2" src="img/dice6.png">
-            <img class="img3" src="img/dice6.png">
+    <head>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body id="particles-js"></body>
+    <%
+        String user_id = (String) session.getAttribute("Name").toString();
+        DAOUser daouser = new DAOUser();
+        User user = daouser.getUserbyUsername(user_id);
+    %>
+    <div class="animate__animated animate__backInDown">
+        <div class="navigation">
+            <a class="button" href="Paygame.jsp">
+                <img id="imgNav" src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+                <div class="logout" href="PayGame.jsp">Point</div>
+            </a>
         </div>
-        <h2>Bạn chọn: </h2>
-        <h3></h3>
-        <input id="xubet" onkeypress="myFunction(event)">
-        <p id="demo"></p>
-        <input id="tai" value="Tài" onclick="checkwinTai()" type="button">
-        <input id="xiu" value="Xỉu" onclick="checkwinXiu()" type="button">
-        <script type="text/javascript">
+    </div>
+    <div class="animate__animated animate__backInDown">
+        <div class="container" style="margin-top: 70px">
+            <div>
+                <h1>Roll</h1>
+                <img class="img1" src="img/dice6.png">
+                <img class="img2" src="img/dice6.png">
+                <img class="img3" src="img/dice6.png">
+            </div>
+            <h2>Bạn chọn: </h2>
+            <h3></h3>
+            <input id="xubet" onkeypress="myFunction(event)">
+            <p id="demo"></p>
+            <input id="tai" value="Tài" onclick="checkwinTai()" type="button">
+            <input id="xiu" value="Xỉu" onclick="checkwinXiu()" type="button">
+        </div>
+    </div>
+
+    <script src="particles.js-master/particles.js"></script>
+    <script src="particles.js-master/demo/js/app.js"></script>
+    <script type="text/javascript">
             var total = 0;
             var bet = 0;
             const pointuser = point.value;
@@ -73,7 +89,7 @@ and open the template in the editor.
                         if (bet == 2) {
                             document.querySelector("h2").innerHTML = "Bạn thắng";
                             bet = 0;
-                            let xuafterbet = Number(pointuser) + Number(xubet.value *1.5);
+                            let xuafterbet = Number(pointuser) + Number(xubet.value * 1.5);
                             point.value = xuafterbet;
                             sendResult("thang", "xiu", xubet.value, xubet.value * 1.5, ab[1]);
 
@@ -173,6 +189,5 @@ and open the template in the editor.
                 }
 
             }
-        </script>
-    </body>
+    </script>
 </html>
