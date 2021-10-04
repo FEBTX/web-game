@@ -308,8 +308,7 @@ label span {
     float: left;
 }
 #imgNav {
-    size: 50px;
-    border-radius: 50px;
+    height: 30px;
     float: left;
 }
 
