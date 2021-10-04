@@ -28,7 +28,8 @@
             });
         </script>
     </body>
-    <div class="container" style="width: max-content;height: max-content;">
+    <div class="animate__animated animate__backInDown">
+        <div class="container" style="width: max-content;height: max-content;">
         <table id="example" class="styled-table">
             <thead>
                 <tr>
@@ -59,4 +60,6 @@
             <tfoot
         </table>
     </div>
+    </div>
+    
 </html>

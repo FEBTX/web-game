@@ -299,9 +299,16 @@ label span {
     width: 100%;
     background-color: black;
 }
-
+#min{
+    transform: rotate(180deg);
+}
+#min,#max{
+    size: 50px;
+    border-radius: 50px;
+    float: left;
+}
 #imgNav {
-    width: 25px;
+    size: 50px;
     border-radius: 50px;
     float: left;
 }
@@ -310,6 +317,7 @@ label span {
     font-size: .8em;
     font-family: 'Oswald', sans-serif;
     position: relative;
+    display: block;
     right: -18px;
     bottom: -4px;
     overflow: hidden;
@@ -320,7 +328,7 @@ label span {
 
 }
 
-.button {
+#a1 {
     text-decoration: none;
     float: right;
     padding: 12px;
@@ -336,10 +344,9 @@ label span {
     overflow: hidden
 }
 
-a:hover {
+#a1:hover {
     width: 100px;
 }
-
 a:hover .logout{
     opacity: .9;
 }
