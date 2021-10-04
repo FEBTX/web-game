@@ -35,9 +35,10 @@
             <%
             } else {
             %>
-            <a href="ClientRoll.jsp"><button class="bn632-hover bn20">Play Game</button></a>
-            <a href="historyalluser.jsp"><button class="bn632-hover bn20">Change Infomation</button></a>
-            <a href="historyuser.jsp"><button class="button-64" role="button"><span class="text">View History</span></button> </a>
+            <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span class="text">Play game</span></button></a>
+            <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%; left: 50%"><span class="text">Change infomation</span></button></a>
+            <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 50%; left: 25%"><span class="text">View History</span></button></a>
+
             <%
                 }
             %>
@@ -45,15 +46,4 @@
     </div>
     <script src="particles.js-master/particles.js"></script>
     <script src="particles.js-master/demo/js/app.js"></script>
-    <script>
-        $("button").click(function () {
-            if ($(this).hasClass("confirm")) {
-                $(this).addClass("done");
-                $("span").text("Deleted");
-            } else {
-                $(this).addClass("confirm");
-                $("span").text("Are you sure?");
-            }
-        });
-    </script>
 </html>
