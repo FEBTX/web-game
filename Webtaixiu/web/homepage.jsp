@@ -35,7 +35,7 @@
             <%
             } else {
             %>
-            <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span class="text">Play game</span></button></a>
+            <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text" style="align-items: center"><img style="height: 50px; float: left; position: absolute; right: 80%; top: 10%" src="img/dice.png">Play game</span></button></a>
             <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%; left: 50%"><span class="text">Change infomation</span></button></a>
             <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 50%; left: 25%"><span class="text">View History</span></button></a>
 
