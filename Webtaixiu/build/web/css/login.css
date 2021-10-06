@@ -299,13 +299,6 @@ label span {
     width: 100%;
     background-color: black;
 }
-#min{
-    transform: rotate(180deg);
-}
-#min,#max{
-    height: 30px;
-    float: left;
-}
 #imgNav {
     height: 25px;
     border-radius: 50px;
@@ -361,7 +354,6 @@ a {
     text-decoration: none;
 }
 .button-64 {
-    position: absolute;
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     margin: 15px;
@@ -376,8 +368,7 @@ a {
     font-size: 20px;
     justify-content: center;
     line-height: 1em;
-    width: 90px;
-    height: 150px;
+    width: 300px;
     padding: 3px;
     text-decoration: none;
     user-select: none;

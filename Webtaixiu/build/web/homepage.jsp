@@ -9,7 +9,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>HomePage</title>
-        <link rel="stylesheet" href="css/login.css">
+        <link type="text/css" rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.1.2/src/font/typicons.min.css">
     </head>
@@ -35,10 +35,11 @@
             <%
             } else {
             %>
-            <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text" style="align-items: center"><img style="height: 50px; float: left; position: absolute; right: 80%; top: 10%" src="img/dice.png">Play game</span></button></a>
-            <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%; left: 50%"><span class="text">Change infomation</span></button></a>
-            <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 50%; left: 25%"><span class="text">View History</span></button></a>
-
+            <div style="position: absolute">
+                <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">Play game</span></button></a>
+                <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
+                <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History</span></button></a>
+            </div>
             <%
                 }
             %>
