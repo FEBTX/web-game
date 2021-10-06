@@ -19,7 +19,7 @@ and open the template in the editor.
         DAOUser daouser = new DAOUser();
         User user = daouser.getUserbyUsername(user_id);
     %>
-    <div class="animate__animated animate__backInDown">
+    <div class="animate__animated animate__backInDown" style="">
         <div class="navigation">
             <a id="a1" class="button" href="homepage.jsp" >
                 <img id="imgNav" src="img/exit.png">
@@ -37,8 +37,8 @@ and open the template in the editor.
     </div>
     <div class="animate__animated animate__backInDown">
         <div class="container" style="height: 50px; top: 70px">
-            <input type="text" value="<% user.getPoint(); %>" style="border-radius: 0px 8px 8px 0px; font-size: 15px; height: 20px;width: 80px;text-align: center; float: right; top: 25%; right: 5%; position: absolute; cursor: default" readonly >
-            <input type="text" value="<% user.getPoint();%>" style="border-radius: 8px 0px 0px 8px ; font-size: 15px; height: 20px;width: 120px;text-align: center; float: right; top: 25%; right: 28%; position: absolute; cursor: default" readonly >
+            <input type="text" value="<%=user.getPoint()%>" style="border-radius: 0px 8px 8px 0px; font-size: 15px; height: 20px;width: 80px;text-align: center; float: right; top: 25%; right: 5%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
+            <input type="text" value="<%=user.getFullname()%>" style="border-radius: 8px 0px 0px 8px ; font-size: 15px; height: 20px;width: 120px;text-align: center; float: right; top: 25%; right: 28%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
         </div>
     </div>
     <div class="animate__animated animate__backInDown">

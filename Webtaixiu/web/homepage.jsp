@@ -4,6 +4,8 @@
     Author     : Admin
 --%>
 
+<%@page import="DTO.User"%>
+<%@page import="DAO.DAOUser"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,16 +16,25 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.1.2/src/font/typicons.min.css">
     </head>
     <body id="particles-js"></body>
-    <div class="animate__animated animate__backInDown">
-        <div class="navigation">
+    <%
+        String user_id = (String) session.getAttribute("Name").toString();
+        DAOUser daouser = new DAOUser();
+        User user = daouser.getUserbyUsername(user_id);
+    %>
+    <div class="animate__animated animate__backInDown" style="position: absolute">
+        <div class="navigation" >
             <a id="a1" class="button" href="index.jsp">
-                <img id="imgNav" src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+                <img id="imgNav" src="img/exit.png">
                 <div class="logout">LOGOUT</div>
             </a>
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
-        <div class="container" style="width: 700px; height: 300px; top: 200px" >
+        <div class="container" style="width: 450px; height: 500px; top: 150px" >
+            <div class="box">
+                <h4>Game<span>TaiXiu</span></h4>
+                <h5 >Welcome back, <%=user.getUser_name()%></h5>
+            </div>
             <%
                 String role = session.getAttribute("role").toString();
                 if (role.equals("1")) {
@@ -35,7 +46,7 @@
             <%
             } else {
             %>
-            <div style="position: absolute">
+            <div style="position: absolute; left: 13.5%; top: 40%">
                 <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">Play game</span></button></a>
                 <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
                 <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History</span></button></a>
