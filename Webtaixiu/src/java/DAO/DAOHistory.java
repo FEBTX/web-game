@@ -25,7 +25,7 @@ public class DAOHistory {
     static Connection conn;
     int totalplayed = 0;
     int totalwin = 0;
-    public static void InsertHistory(String user_name, String betresult, String bet, int betpoint, int betwin, int room_id) {
+    public static void InsertHistory(String user_name, String betresult, String bet, float betpoint, float betwin, int room_id) {
         try {
             conn = temp.connect();
             PreparedStatement stmt = conn.prepareStatement("Insert into history values(?, ?, ?, ?, ?,?,?)");
@@ -33,8 +33,8 @@ public class DAOHistory {
             stmt.setString(2, user_name);
             stmt.setString(3, betresult);
             stmt.setString(4, bet);
-            stmt.setInt(5, betpoint);
-            stmt.setInt(6, betwin);
+            stmt.setFloat(5, betpoint);
+            stmt.setFloat(6, betwin);
             stmt.setInt(7, room_id);
             stmt.executeUpdate();
         } catch (Exception e) {

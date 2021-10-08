@@ -37,18 +37,20 @@ public class ResultRoll {
         String username = (String) userSession.getUserProperties().get("username");
         if (username == null) {
             userSession.getUserProperties().put("username", message);
-            userSession.getBasicRemote().sendText("System: you are connectd as " + message);
+            System.out.println("User name " + message);
         } else {
             for (Session session : users) {
-                session.getBasicRemote().sendText(username + ": " + message);
                 String a[] = message.split("/");
-                //huybui/thua/tai/1000/1500/57
-                DAOUser daouser = new DAOUser();
-                User user = daouser.getUserbyUsername(a[0]);
-                int winbet = Integer.parseInt(a[4]) - Integer.parseInt(a[3]);
-                DAO.DAOHistory.InsertHistory(a[0], a[1], a[2], Integer.parseInt(a[3]), winbet, Integer.parseInt(a[5]));
-                daouser.UpdateResultUser(a[0], user.getPoint()+winbet);
+                //thang/tai/5/32.5/837
                 System.out.println(message);
+                System.out.println(username);
+                DAOUser daouser = new DAOUser();
+                User user = daouser.getUserbyUsername(username);
+                double betwin = Integer.parseInt(a[2])*1.5;
+                float winbet = (float)betwin - Float.parseFloat(a[2]);
+                DAO.DAOHistory.InsertHistory(username, a[0], a[1], Float.parseFloat(a[2]), winbet, Integer.parseInt(a[4]));
+                daouser.UpdateResultUser(username, Float.parseFloat(a[3]));
+                
             }
         }
     }

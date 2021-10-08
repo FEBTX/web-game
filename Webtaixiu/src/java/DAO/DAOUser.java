@@ -97,30 +97,61 @@ public class DAOUser {
         }
         return user;
     }
-      public  void UpdateResultUser(String username, int point) {
-          DAOHistory dao = new DAOHistory();
+
+    public void UpdateResultUser(String username, float point) {
+        DAOHistory dao = new DAOHistory();
         try {
             conn = temp.connect();
             PreparedStatement stmt = conn.prepareStatement("UPDATE user set point=?,rating=? where user_name = ? ");
-            stmt.setInt(1, point);
+            stmt.setFloat(1, point);
             stmt.setFloat(2, dao.getRating(username));
             stmt.setString(3, username);
             stmt.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("loi" +e);
+            System.out.println("loi" + e);
         }
     }
-        public  void UpdatePoint(String username, int point) {
+
+    public void UpdatePoint(String username, float point) {
         try {
             conn = temp.connect();
             PreparedStatement stmt = conn.prepareStatement("UPDATE user set point=? where user_name = ? ");
-            stmt.setInt(1, point);
+            stmt.setFloat(1, point);
             stmt.setString(2, username);
             stmt.executeUpdate();
 
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void UpdateinfoUser(String username, String fullname, String Phone, String Address, String Password) {
+        if (Password != null) {
+            try {
+                conn = temp.connect();
+                PreparedStatement stmt = conn.prepareStatement("UPDATE user set password=? where user_name = ? ");
+                stmt.setString(1, Password);
+                stmt.setString(2, username);
+                stmt.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else {
+            try {
+                conn = temp.connect();
+                PreparedStatement stmt = conn.prepareStatement("UPDATE user set fullname=?,phone=?,address? where user_name = ? ");
+                stmt.setString(1, fullname);
+                stmt.setString(2, Phone);
+                stmt.setString(3, Address);
+                stmt.setString(4, username);
+                stmt.executeUpdate();
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
     }
 }

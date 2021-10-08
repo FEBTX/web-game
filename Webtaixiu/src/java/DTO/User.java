@@ -19,7 +19,7 @@ public class User {
     private String password;
     private int matchpalyed;
     private int winmatch;
-    private int point;
+    private float point;
     private float rating;
    
     public int getId_user() {
@@ -86,7 +86,7 @@ public class User {
         this.winmatch = winmatch;
     }
 
-    public int getPoint() {
+    public float getPoint() {
         return point;
     }
 
@@ -102,7 +102,7 @@ public class User {
         this.rating = rating;
     }
 
-    public User(int id_user, String fullname, String phone, String address, String user_name, String password, int matchpalyed, int winmatch, int point, float rating) {
+    public User(int id_user, String fullname, String phone, String address, String user_name, String password, int matchpalyed, int winmatch, float point, float rating) {
         this.id_user = id_user;
         this.fullname = fullname;
         this.phone = phone;
