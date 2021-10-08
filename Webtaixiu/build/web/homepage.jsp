@@ -16,14 +16,10 @@
     <body id="particles-js"></body>
     <div class="animate__animated animate__backInDown">
         <div class="navigation">
-            <a class="button" href="index.jsp">
-                <img src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
+            <a id="a1" class="button" href="index.jsp">
+                <img id="imgNav" src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">
                 <div class="logout">LOGOUT</div>
             </a>
-        </div>
-    </div>
-    <div class="animate__animated animate__backInDown">
-        <div class="container" style="width: 700px; height: 50px; top: 100px;" >    
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
@@ -41,7 +37,7 @@
             %>
             <a href="ClientRoll.jsp"><button class="bn632-hover bn20">Play Game</button></a>
             <a href="historyalluser.jsp"><button class="bn632-hover bn20">Change Infomation</button></a>
-            <a href="historyuser.jsp"><button class="bn632-hover bn20">View History</button></a>
+            <a href="historyuser.jsp"><button class="button-64" role="button"><span class="text">View History</span></button> </a>
             <%
                 }
             %>
@@ -49,4 +45,15 @@
     </div>
     <script src="particles.js-master/particles.js"></script>
     <script src="particles.js-master/demo/js/app.js"></script>
+    <script>
+        $("button").click(function () {
+            if ($(this).hasClass("confirm")) {
+                $(this).addClass("done");
+                $("span").text("Deleted");
+            } else {
+                $(this).addClass("confirm");
+                $("span").text("Are you sure?");
+            }
+        });
+    </script>
 </html>
