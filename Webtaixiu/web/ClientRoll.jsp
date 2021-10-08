@@ -19,7 +19,7 @@ and open the template in the editor.
         DAOUser daouser = new DAOUser();
         User user = daouser.getUserbyUsername(user_id);
     %>
-     <div class="animate__animated animate__backInDown">
+    <div class="animate__animated animate__backInDown" style="">
         <div class="navigation">
             <a id="a1" class="button" href="homepage.jsp" >
                 <img id="imgNav" src="img/exit.png">
@@ -36,7 +36,13 @@ and open the template in the editor.
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
-        <div class="container" style="margin-top: 70px">
+        <div class="container" style="height: 50px; top: 70px">
+            <input type="text" value="<%=user.getPoint()%>" style="border-radius: 0px 8px 8px 0px; font-size: 15px; height: 20px;width: 80px;text-align: center; float: right; top: 25%; right: 5%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
+            <input type="text" value="<%=user.getFullname()%>" style="border-radius: 8px 0px 0px 8px ; font-size: 15px; height: 20px;width: 120px;text-align: center; float: right; top: 25%; right: 28%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
+        </div>
+    </div>
+    <div class="animate__animated animate__backInDown">
+        <div class="container" style="top: 150px">
             <div>
                 <h1 style="color: #ffffff">Roll</h1>
                 <img class="img1" src="img/dice6.png">
@@ -46,10 +52,10 @@ and open the template in the editor.
             <div style="margin-top: 20px">
                 <h2 style="color: #ffffff; font-size: 18px">&nbsp;</h2>
                 <h3 style="color: #ffffff"></h3>
-                <input id="xubet" type="number" placeholder="0" onkeypress="myFunction(event)" style="border-radius: 8px; font-size: 17px; height: 30px;width: 250px;bottom: 50%;text-align: center">
+                <input id="xubet" type="number" placeholder="Point" onkeypress="myFunction(event)" style="border-radius: 8px; font-size: 17px; height: 30px;width: 250px;bottom: 50%;text-align: center">
                 <p id="demo"></p>
-                <button class="bn632-hover bn20" id="tai" value="Tài" onclick="checkwinTai()" style="width: 100px; height: 50px; font-size: 20px"><img id="max" src="img/up.png">Max</button>
-                <button class="bn632-hover bn20" id="xiu" value="Tài" onclick="checkwinXiu()" style="width: 100px; height: 50px; font-size: 20px"><img id="min" src="img/up.png">Min</button>
+                <button class="bn632-hover bn20" id="tai" value="Tài" onclick="checkwinTai()" style="width: 100px; height: 100px; align-items: center"><img id="max" src="img/up.png" style="height: 50px;"></button>
+                <button class="bn632-hover bn20" id="xiu" value="Tài" onclick="checkwinXiu()" style="width: 100px; height: 100px; align-items: center"><img id="min" src="img/up.png" style="height: 50px; transform: rotate(180deg);"></button>
             </div>
         </div>
     </div>
