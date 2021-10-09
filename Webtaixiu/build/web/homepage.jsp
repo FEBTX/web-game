@@ -39,16 +39,18 @@
                 String role = session.getAttribute("role").toString();
                 if (role.equals("1")) {
             %>
-            <a href="ServerRoll.jsp"><button class="bn632-hover bn20">Start Game</button></a>
-            <a href="historymanager.jsp"><button class="bn632-hover bn20">View History Room</button></a>
-            <a href="historyalluser.jsp"><button class="bn632-hover bn20">View History User</button></a>
-            <a href="usermanger.jsp"><button class="bn632-hover bn20">View User</button></a>
+            <div style="position: absolute; left: 13.5%; top: 32%">
+                <a href="ServerRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">Start game</span></button></a>
+                <a href="historymanager.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History Room</span></button></a>
+                <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History User</span></button></a>    
+                <a href="usermanger.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View User</span></button></a>
+            </div>
             <%
             } else {
             %>
             <div style="position: absolute; left: 13.5%; top: 40%">
                 <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">Play game</span></button></a>
-                 <a href="Change_Infomation.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
+                <a href="Change_Infomation.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
                 <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History</span></button></a>
             </div>
             <%

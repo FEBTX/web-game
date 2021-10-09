@@ -15,6 +15,14 @@
         <title>JSP Page</title>
     </head>
     <body id="particles-js"></body>
+    <div class="animate__animated animate__backInDown" style="position: absolute">
+        <div class="navigation" >
+            <a id="a1" class="button" href="homepage.jsp">
+                <img id="imgNav" src="img/exit.png">
+                <div class="logout">Back</div>
+            </a>
+        </div>
+    </div>
     <div class="animate__animated animate__backInDown">
         <div class="container" style="top: 75px;">
             <span class="error animate__animated animate__tada" id="msg"></span>

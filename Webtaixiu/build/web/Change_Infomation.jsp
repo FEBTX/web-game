@@ -22,6 +22,14 @@
         DAOUser daouser = new DAOUser();
         User user = daouser.getUserbyUsername(user_id);
     %>
+    <div class="animate__animated animate__backInDown" style="position: absolute">
+        <div class="navigation" >
+            <a id="a1" class="button" href="homepage.jsp">
+                <img id="imgNav" src="img/exit.png">
+                <div class="logout">Back</div>
+            </a>
+        </div>
+    </div>
     <div class="animate__animated animate__backInUp">
         <div class="container" style="height: 550px; top: 75px;">
             <span class="error animate__animated animate__tada" id="msg" style="top: 23%"></span>
