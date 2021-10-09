@@ -10,7 +10,7 @@ and open the template in the editor.
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <link rel="stylesheet" href="css/login.css">
+        <link type="text/css" rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body id="particles-js"></body>
@@ -19,7 +19,7 @@ and open the template in the editor.
         DAOUser daouser = new DAOUser();
         User user = daouser.getUserbyUsername(user_id);
     %>
-    <div class="animate__animated animate__backInDown" style="">
+    <div class="animate__animated animate__backInDown" style="position: absolute">
         <div class="navigation">
             <a id="a1" class="button" href="homepage.jsp" >
                 <img id="imgNav" src="img/exit.png">
@@ -27,7 +27,7 @@ and open the template in the editor.
             </a>
         </div>
     </div>
-    <div class="animate__animated animate__backInDown">
+    <div class="animate__animated animate__backInDown" >
         <div class="navigation">
             <a id="a1" class="button" href="PayGame.jsp" >
                 <img id="imgNav" src="img/coin-stack.png">
@@ -36,16 +36,17 @@ and open the template in the editor.
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
-        <div class="container" style="height: 50px; top: 70px">
+        <div class="container box" style="height: 50px; top: 70px">
             <input id="id_user" value="<%=user.getUser_name()%>" type="hidden" readonly/>
-            <input id="point" type="text" value="<%=user.getPoint()%>" style="border-radius: 0px 8px 8px 0px; font-size: 15px; height: 20px;width: 80px;text-align: center; float: right; top: 25%; right: 5%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
-            <input type="text" value="<%=user.getFullname()%>" style="border-radius: 8px 0px 0px 8px ; font-size: 15px; height: 20px;width: 120px;text-align: center; float: right; top: 25%; right: 28%; position: absolute; cursor: default;font-weight: bold; background: #fff; " readonly >
+            <input id="point" type="text" value="<%=user.getPoint()%>" style="height: 10px; width: 50px ; position: absolute; top: -29%; left: 80%;border: 1px solid #79A6FE;" readonly >
+            <input type="text" value="<%=user.getFullname()%>" style="height: 10px;width: 90px ;position: absolute; top: -29%;left: 50%;border: 1px solid #79A6FE; " readonly >
         </div>
     </div>
     <div class="animate__animated animate__backInDown">
-        <div class="container" style="top: 150px">
+        <div class="container box" style="top: 150px">
             <div>
-                <h1 style="color: #ffffff">Roll</h1>
+                <h4 style="margin-top: 50px">Game<span>TaiXiu</span></h4>
+                <h5 style="margin-bottom: 30px">Sign in to your account.</h5>
                 <img class="img1" src="img/dice6.png">
                 <img class="img2" src="img/dice6.png">
                 <img class="img3" src="img/dice6.png">
