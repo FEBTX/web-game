@@ -5,13 +5,16 @@
  */
 package Controlller;
 
+import DAO.DAOUser;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,18 +35,24 @@ public class ChangeInfomation extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ChangeInfomation</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ChangeInfomation at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        PrintWriter out = response.getWriter();
+        String phone = request.getParameter("phone");
+        String name = request.getParameter("fullname");
+        String address = request.getParameter("address");
+        DAOUser dao = new DAOUser();
+        HttpSession session = request.getSession();
+        String user_name = (String) session.getAttribute("Name").toString();
+        dao.UpdateinfoUser(user_name, name, phone, address, null);
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
+        out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+        out.println("<script>");
+        out.println("$(document).ready(function(){");
+        out.println("swal('Change Information Success!','', 'success');");
+        out.println("});");
+        out.println("</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("./homepage.jsp");
+        rd.include(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

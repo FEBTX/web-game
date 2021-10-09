@@ -25,7 +25,7 @@
     <div class="animate__animated animate__backInUp">
         <div class="container" style="height: 550px; top: 75px;">
             <span class="error animate__animated animate__tada" id="msg" style="top: 23%"></span>
-            <form name="form1" action="Register" method="POST" class="box" onload="SetStatus()">
+            <form name="form1" action="ChangeInfomation" method="POST" class="box" onload="SetStatus()">
                 <h4>Game<span>TaiXiu</span></h4>
                 <h5>Create your account.</h5>
                 <input type="text" name="fullname" id="fullname" placeholder="Full Name" value="<%=user.getFullname()%>" autocomplete="off" required title="Fullname is required">

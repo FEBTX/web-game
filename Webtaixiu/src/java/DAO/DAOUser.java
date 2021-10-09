@@ -128,7 +128,7 @@ public class DAOUser {
     }
 
     public void UpdateinfoUser(String username, String fullname, String Phone, String Address, String Password) {
-        if (Password != null) {
+        if (Password != null && fullname == null && Phone == null && Address == null) {
             try {
                 conn = temp.connect();
                 PreparedStatement stmt = conn.prepareStatement("UPDATE user set password=? where user_name = ? ");
