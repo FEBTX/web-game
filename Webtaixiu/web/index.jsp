@@ -18,7 +18,7 @@
                 <h4>Game<span>TaiXiu</span></h4>
                 <h5>Sign in to your account.</h5>
                 <input type="text" name="username" placeholder="User Name" autocomplete="off">
-                <i class="typcn typcn-eye" id="eye"></i>
+                <i class="typcn typcn-eye" id="eye" style="top: 57.5%; left: 82%"></i>
                 <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
                 <a href="#" class="forgetpass">Forget Password?</a>
                 <input type="submit" value="Sign in" class="btn1">

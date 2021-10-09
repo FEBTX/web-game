@@ -48,8 +48,7 @@
             %>
             <div style="position: absolute; left: 13.5%; top: 40%">
                 <a href="ClientRoll.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">Play game</span></button></a>
-                 <a href="PayGame.jsp"><button class="button-64" role="button" style="top: 10%;"><span id="text">More Point</span></button></a>
-                <a href="historyalluser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
+                 <a href="Change_Infomation.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">Change infomation</span></button></a>
                 <a href="historyuser.jsp"><button class="button-64" role="button" style="top: 10%"><span class="text">View History</span></button></a>
             </div>
             <%

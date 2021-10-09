@@ -10,6 +10,7 @@ import DTO.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import org.omg.PortableInterceptor.USER_EXCEPTION;
@@ -152,6 +153,37 @@ public class DAOUser {
                 System.out.println(e);
             }
         }
-
     }
+
+    public void RegisterUser(String username, String fullname, String Phone, String Address, String Password, float point, float rating, int role) {
+        try {
+            conn = temp.connect();
+            PreparedStatement stm = conn.prepareStatement("Insert into user value(?,?,?,?,?,?,?,?,?)");
+            stm.setInt(1, 0);
+            stm.setString(2, fullname);
+            stm.setString(3, Phone);
+            stm.setString(4, Address);
+            stm.setString(5, username);
+            stm.setString(6, Password);
+            stm.setFloat(7, point);
+            stm.setFloat(8, rating);
+            stm.setInt(9, role);
+            stm.executeUpdate();
+            System.out.println("Register success");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public boolean CheckUserExist(String Username) throws SQLException {
+        conn = temp.connect();
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM user where role = 1 and user_name = '" + Username + "'");
+        if (rs.next()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
