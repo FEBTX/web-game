@@ -13,7 +13,7 @@
     <body id="particles-js"></body>
     <div class="animate__animated animate__backInUp">
         <div class="container" style="height: 680px; top: 25px;">
-            <span class="error animate__animated animate__tada" id="msg" style="top: 23%"></span>
+            <span class="error animate__animated animate__tada" id="msg" style="top: 23%;display: none;"></span>
             <form name="form1" action="Register" method="POST" class="box" onsubmit="return checkStuff()">
                 <h4>Game<span>TaiXiu</span></h4>
                 <h5>Create your account.</h5>
