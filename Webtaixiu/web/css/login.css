@@ -202,6 +202,7 @@ label span {
     top: 31%;
     left: 7.2%;
     color: white;
+    overflow: hidden;
 }
 
 .footer {
@@ -340,7 +341,7 @@ label span {
     padding: 12px;
     margin: 15px;
     color: white;
-    width: 50px;
+    width: 25px;
     background-color: rgb( 33, 41, 66 );
     border-radius: 8px;
     border-top: 5px solid #79a6fe;
